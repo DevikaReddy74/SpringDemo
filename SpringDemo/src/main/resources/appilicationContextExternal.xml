@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Dependency Injection by using constructors -->
+	<!--  
+	<bean id="employee1" class="com.cts.pojo.Employee"
+		scope="singleton">
+		<constructor-arg value="101" type="int"></constructor-arg>
+		<constructor-arg value="Devika"></constructor-arg>
+		<constructor-arg value="22" type="int"/>
+		<constructor-arg ref="address"/>
+	</bean>
+	-->
+
+	<!-- Load Properties file for injecting the values in it -->
+	<!-- 
+	<context:property-placeholder location="classpath:application.properties"/>	
+	-->
+	<!-- using injecting the values in properties file -->
+	<!--
+	<bean id="employee" class="com.cts.pojo.Employee" scope="prototype">
+		<property name="empId" value="${e.empId}"></property>
+		<property name="name" value="$e.name}"></property>
+		<property name="age" value="${e.age}"></property>
+		<property name="address" ref="address"></property>
+	</bean>
+	 -->	
+	<!-- Dependency Injection by using Property(setters) -->
+	<bean id="employee" class="com.cts.pojo.Employee" scope="prototype">
+		<property name="empId" value="102"></property>
+		<property name="name" value="Dev"></property>
+		<property name="age" value="21"></property>
+		<property name="address" ref="address"></property>
+	</bean>
+	
+	<bean id="address" class="com.cts.pojo.Address" scope="prototype">
+		<property name="dNo" value="9-5"></property>
+		<property name="street" value="Malkapuram"></property>
+		<property name="mandal" value="Dharmavaram"></property>
+		<property name="pinCode" value="515672"></property>
+	</bean>
+
+</beans>

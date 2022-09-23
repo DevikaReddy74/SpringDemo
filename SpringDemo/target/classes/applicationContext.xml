@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+          
+	<!-- Configuring Beans by using XML (Spring IoC container) -->
+	<bean id="baseBall" class="com.cts.coach.types.BaseballCoach">
+	</bean>
+	<bean id="footBall" class="com.cts.coach.types.FootballCoach">
+	</bean>
+
+
+
+	<!-- Dependency Injection by using constructors -->
+	<!-- <bean id="employee1" class="com.cts.pojo.Employee" scope="singleton"> 
+		<constructor-arg value="101" type="int"></constructor-arg> 
+		<constructor-arg value="Devika"></constructor-arg> 
+		<constructor-arg value="22" type="int"></constructor-arg> 
+		</bean> -->
+	<!-- Dependency Injection by using property -->
+	<!-- <bean id="address" class="com.cts.pojo.Address" scope="prototype"> 
+		<property name="dNo" value="9-5"></property> 
+		<property name="street" value="Malkapuram"></property> 
+		<property name="mandal" value="Dharmavaram"></property> 
+		<property name="pinCode" value="515672"></property> 
+		</bean> -->
+
+</beans>
